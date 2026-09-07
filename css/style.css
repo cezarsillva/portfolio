@@ -3,61 +3,114 @@
    ========================================= */
 
 :root {
+
     --primary: #087fd1;
+
     --primary-dark: #0564a8;
 
     --text: #172333;
+
     --muted: #637083;
 
-    /* FUNDO PRINCIPAL ATUALIZADO */
+    /* FUNDO PRINCIPAL */
     --background: #eef6fc;
 
     --white: #ffffff;
 
     --border: #dce6f0;
 
-    /* FUNDO SUAVE ATUALIZADO */
+    /* FUNDO SUAVE */
     --soft: #e7f2fb;
 
     --shadow: 0 10px 30px rgba(24, 61, 94, .08);
 }
 
+
+/* =========================================
+   RESET
+   ========================================= */
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
 }
 
+
+/* =========================================
+   HTML
+   ========================================= */
+
 html {
+
     scroll-behavior: smooth;
 }
 
+
+/* =========================================
+   BODY
+   ========================================= */
+
 body {
+
     font-family: Arial, Helvetica, sans-serif;
+
     background: var(--background);
+
     color: var(--text);
+
     line-height: 1.6;
+
+    /* Evita problemas com elementos fixos */
+    min-height: 100vh;
 }
 
+
+/* =========================================
+   LINKS
+   ========================================= */
+
 a {
+
     text-decoration: none;
+
     color: inherit;
 }
 
+
+/* =========================================
+   CONTAINER
+   ========================================= */
+
 .container {
+
     width: min(1120px, 90%);
+
     margin: auto;
 }
 
 
 /* =========================================
    HEADER
+   FIXO NO TOPO
    ========================================= */
 
 header {
-    position: sticky;
+
+    position: fixed;
+
     top: 0;
-    z-index: 10;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 72px;
+
+    z-index: 9999;
 
     background: rgba(255, 255, 255, .94);
 
@@ -66,18 +119,33 @@ header {
     backdrop-filter: blur(12px);
 }
 
+
+/* =========================================
+   NAVEGAÇÃO
+   ========================================= */
+
 .nav {
-    min-height: 72px;
+
+    height: 72px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 25px;
 }
 
+
+/* =========================================
+   LOGO
+   ========================================= */
+
 .logo img {
+
     width: 155px;
+
     display: block;
 }
 
@@ -87,17 +155,25 @@ header {
    ========================================= */
 
 nav {
+
     display: flex;
+
     gap: 28px;
 }
 
+
 nav a {
+
     color: #465468;
+
     font-size: 14px;
+
     transition: .2s;
 }
 
+
 nav a:hover {
+
     color: var(--primary);
 }
 
@@ -107,6 +183,7 @@ nav a:hover {
    ========================================= */
 
 .btn {
+
     border: 1px solid var(--primary);
 
     color: var(--primary);
@@ -120,9 +197,59 @@ nav a:hover {
     transition: .2s;
 }
 
+
 .btn:hover {
+
     background: var(--primary);
+
     color: white;
+}
+
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+   COMPENSA O HEADER E O FOOTER FIXOS
+   ========================================= */
+
+main {
+
+    padding-top: 72px;
+
+    padding-bottom: 75px;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SEÇÕES
+   ========================================= */
+
+section {
+
+    padding: 85px 0;
+
+    scroll-margin-top: 72px;
+}
+
+
+.soft {
+
+    background: var(--soft);
+}
+
+
+.section-title {
+
+    margin-bottom: 38px;
+}
+
+
+.section-title h2 {
+
+    font-size: 34px;
+
+    margin-top: 7px;
 }
 
 
@@ -131,18 +258,27 @@ nav a:hover {
    ========================================= */
 
 .hero {
+
     padding: 80px 0;
 
-    /* NOVO FUNDO AZUL CLARO */
+    /* FUNDO AZUL CLARO */
+
     background: linear-gradient(
+
         135deg,
+
         #f8fcff 0%,
+
         #eaf5fd 50%,
+
         #f2f8fd 100%
+
     );
 }
 
+
 .hero-grid {
+
     min-height: 600px;
 
     display: grid;
@@ -160,7 +296,9 @@ nav a:hover {
    ========================================= */
 
 .photo {
+
     width: 430px;
+
     height: 430px;
 
     margin: auto;
@@ -170,17 +308,25 @@ nav a:hover {
     border-radius: 50%;
 
     background: linear-gradient(
+
         135deg,
+
         #087fd1,
+
         #70c9ff
+
     );
 
     box-shadow:
+
         0 15px 45px rgba(8, 127, 209, .20);
 }
 
+
 .photo img {
+
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -199,6 +345,7 @@ nav a:hover {
 
 .tag,
 .section-title > span {
+
     color: var(--primary);
 
     font-size: 12px;
@@ -208,7 +355,9 @@ nav a:hover {
     letter-spacing: 3px;
 }
 
+
 .hero h1 {
+
     font-size: clamp(40px, 5vw, 58px);
 
     line-height: 1.08;
@@ -216,12 +365,16 @@ nav a:hover {
     margin: 18px 0;
 }
 
+
 .hero h1 strong,
 .section-title strong {
+
     color: var(--primary);
 }
 
+
 .hero-text p {
+
     max-width: 570px;
 
     color: var(--muted);
@@ -232,10 +385,10 @@ nav a:hover {
 
 /* =========================================
    REDES SOCIAIS
-   Instagram • LinkedIn • E-mail • GitHub
    ========================================= */
 
 .social {
+
     display: flex;
 
     gap: 14px;
@@ -243,13 +396,17 @@ nav a:hover {
     margin-top: 28px;
 }
 
+
 .social a {
+
     width: 46px;
+
     height: 46px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     border: 1px solid var(--border);
@@ -265,10 +422,15 @@ nav a:hover {
     box-shadow: var(--shadow);
 
     transition:
+
         transform .25s ease,
+
         background .25s ease,
+
         color .25s ease,
+
         border-color .25s ease,
+
         box-shadow .25s ease;
 }
 
@@ -276,6 +438,7 @@ nav a:hover {
 /* Efeito ao passar o mouse */
 
 .social a:hover {
+
     transform: translateY(-5px);
 
     background: var(--primary);
@@ -285,30 +448,8 @@ nav a:hover {
     border-color: var(--primary);
 
     box-shadow:
+
         0 10px 25px rgba(8, 127, 209, .25);
-}
-
-
-/* =========================================
-   SEÇÕES
-   ========================================= */
-
-section {
-    padding: 85px 0;
-}
-
-.soft {
-    background: var(--soft);
-}
-
-.section-title {
-    margin-bottom: 38px;
-}
-
-.section-title h2 {
-    font-size: 34px;
-
-    margin-top: 7px;
 }
 
 
@@ -318,6 +459,7 @@ section {
 
 .about,
 .contact-grid {
+
     display: grid;
 
     grid-template-columns: 1.2fr .8fr;
@@ -327,7 +469,9 @@ section {
     align-items: center;
 }
 
+
 .about p {
+
     color: var(--muted);
 
     font-size: 17px;
@@ -335,7 +479,9 @@ section {
     margin-bottom: 15px;
 }
 
+
 .info {
+
     border-left: 2px solid var(--primary);
 
     padding-left: 30px;
@@ -345,11 +491,15 @@ section {
     gap: 22px;
 }
 
+
 .info div {
+
     display: grid;
 }
 
+
 .info span {
+
     color: var(--muted);
 }
 
@@ -359,6 +509,7 @@ section {
    ========================================= */
 
 .cards {
+
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
@@ -366,8 +517,10 @@ section {
     gap: 18px;
 }
 
+
 .cards article,
 .projects article {
+
     background: white;
 
     border: 1px solid var(--border);
@@ -381,26 +534,34 @@ section {
     transition: .2s;
 }
 
+
 .cards article:hover,
 .projects article:hover {
+
     transform: translateY(-4px);
 
     border-color: #9ccff0;
 }
 
+
 .cards article > div {
+
     font-size: 34px;
 
     margin-bottom: 12px;
 }
 
+
 .cards h3 {
+
     margin-bottom: 7px;
 }
+
 
 .cards p,
 .projects p,
 .contact p {
+
     color: var(--muted);
 
     font-size: 14px;
@@ -412,6 +573,7 @@ section {
    ========================================= */
 
 .projects {
+
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
@@ -419,7 +581,9 @@ section {
     gap: 18px;
 }
 
+
 .project-icon {
+
     height: 115px;
 
     border-radius: 10px;
@@ -435,11 +599,15 @@ section {
     margin-bottom: 20px;
 }
 
+
 .projects h3 {
+
     margin-bottom: 8px;
 }
 
+
 .projects a {
+
     display: inline-block;
 
     margin-top: 18px;
@@ -451,7 +619,9 @@ section {
     font-size: 13px;
 }
 
+
 .projects a:hover {
+
     color: var(--primary-dark);
 }
 
@@ -461,16 +631,21 @@ section {
    ========================================= */
 
 .contact {
+
     background: white;
 }
 
+
 .contact-info {
+
     border-left: 1px solid var(--border);
 
     padding-left: 35px;
 }
 
+
 .contact-info p {
+
     color: var(--text);
 
     margin-bottom: 15px;
@@ -479,17 +654,35 @@ section {
 
 /* =========================================
    RODAPÉ
+   FIXO EMBAIXO
    ========================================= */
 
 footer {
-    padding: 25px 0;
+
+    position: fixed;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 65px;
+
+    padding: 15px 0;
 
     border-top: 1px solid var(--border);
 
     background: #ffffff;
+
+    z-index: 9999;
 }
 
+
 .footer {
+
+    height: 35px;
+
     display: flex;
 
     justify-content: space-between;
@@ -503,7 +696,9 @@ footer {
     font-size: 12px;
 }
 
+
 .footer img {
+
     width: 135px;
 }
 
@@ -515,41 +710,59 @@ footer {
 @media (max-width: 900px) {
 
     nav {
+
         display: none;
     }
+
 
     .hero-grid,
     .about,
     .contact-grid {
+
         grid-template-columns: 1fr;
     }
 
+
     .hero {
+
         padding: 55px 0;
     }
 
+
     .hero-text {
+
         text-align: center;
     }
 
+
     .hero-text p {
+
         margin: auto;
     }
 
+
     .social {
+
         justify-content: center;
     }
 
+
     .photo {
+
         width: 330px;
+
         height: 330px;
     }
 
+
     .cards {
+
         grid-template-columns: repeat(2, 1fr);
     }
 
+
     .projects {
+
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -561,30 +774,88 @@ footer {
 
 @media (max-width: 600px) {
 
+    /* HEADER */
+
+    header {
+
+        height: 65px;
+    }
+
+
+    .nav {
+
+        height: 65px;
+    }
+
+
+    .logo img {
+
+        width: 135px;
+    }
+
+
     .nav .btn {
+
         display: none;
     }
 
+
+    /* MAIN */
+
+    main {
+
+        padding-top: 65px;
+
+        padding-bottom: 80px;
+    }
+
+
+    /* SEÇÕES */
+
+    section {
+
+        scroll-margin-top: 65px;
+    }
+
+
+    /* FOTO */
+
     .photo {
+
         width: 270px;
+
         height: 270px;
     }
 
+
+    /* TÍTULO */
+
     .hero h1 {
+
         font-size: 38px;
     }
 
+
     .section-title h2 {
+
         font-size: 29px;
     }
 
+
+    /* CARDS */
+
     .cards,
     .projects {
+
         grid-template-columns: 1fr;
     }
 
+
+    /* INFORMAÇÕES */
+
     .info,
     .contact-info {
+
         border-left: 0;
 
         border-top: 2px solid var(--primary);
@@ -592,16 +863,37 @@ footer {
         padding: 25px 0 0;
     }
 
-    .footer {
-        flex-direction: column;
 
-        text-align: center;
+    /* RODAPÉ */
+
+    footer {
+
+        height: 75px;
+
+        padding: 10px 0;
     }
 
-    /* Ícones menores no celular */
+
+    .footer {
+
+        height: 55px;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        gap: 2px;
+    }
+
+
+    /* ÍCONES */
 
     .social a {
+
         width: 44px;
+
         height: 44px;
 
         font-size: 18px;
