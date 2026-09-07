@@ -3,18 +3,25 @@
    ========================================= */
 
 :root {
+
     --primary: #087fd1;
+
     --primary-dark: #0564a8;
+
     --text: #172333;
+
     --muted: #637083;
 
     /* FUNDO PRINCIPAL */
+
     --background: #eef6fc;
 
     --white: #ffffff;
+
     --border: #dce6f0;
 
     /* FUNDO SUAVE */
+
     --soft: #e7f2fb;
 
     --shadow: 0 10px 30px rgba(24, 61, 94, 0.08);
@@ -26,8 +33,11 @@
    ========================================= */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
 }
 
@@ -37,6 +47,7 @@
    ========================================= */
 
 html {
+
     scroll-behavior: smooth;
 }
 
@@ -46,10 +57,15 @@ html {
    ========================================= */
 
 body {
+
     font-family: Arial, Helvetica, sans-serif;
+
     background: var(--background);
+
     color: var(--text);
+
     line-height: 1.6;
+
     min-height: 100vh;
 }
 
@@ -59,7 +75,9 @@ body {
    ========================================= */
 
 a {
+
     text-decoration: none;
+
     color: inherit;
 }
 
@@ -69,7 +87,9 @@ a {
    ========================================= */
 
 .container {
+
     width: min(1120px, 90%);
+
     margin: auto;
 }
 
@@ -80,17 +100,25 @@ a {
    ========================================= */
 
 header {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 72px;
+
     z-index: 9999;
 
     background: rgba(255, 255, 255, 0.94);
+
     border-bottom: 1px solid var(--border);
 
     backdrop-filter: blur(12px);
+
     -webkit-backdrop-filter: blur(12px);
 }
 
@@ -100,10 +128,13 @@ header {
    ========================================= */
 
 .nav {
+
     height: 72px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 25px;
@@ -115,8 +146,11 @@ header {
    ========================================= */
 
 .logo img {
+
     width: 155px;
+
     height: auto;
+
     display: block;
 }
 
@@ -126,17 +160,23 @@ header {
    ========================================= */
 
 nav {
+
     display: flex;
+
     gap: 28px;
 }
 
 nav a {
+
     color: #465468;
+
     font-size: 14px;
+
     transition: color 0.2s ease;
 }
 
 nav a:hover {
+
     color: var(--primary);
 }
 
@@ -146,7 +186,9 @@ nav a:hover {
    ========================================= */
 
 .btn {
+
     border: 1px solid var(--primary);
+
     color: var(--primary);
 
     padding: 9px 17px;
@@ -161,7 +203,9 @@ nav a:hover {
 }
 
 .btn:hover {
+
     background: var(--primary);
+
     color: white;
 }
 
@@ -172,8 +216,11 @@ nav a:hover {
    ========================================= */
 
 main {
+
     padding-top: 72px;
+
     padding-bottom: 75px;
+
     min-height: 100vh;
 }
 
@@ -183,20 +230,26 @@ main {
    ========================================= */
 
 section {
+
     padding: 85px 0;
+
     scroll-margin-top: 72px;
 }
 
 .soft {
+
     background: var(--soft);
 }
 
 .section-title {
+
     margin-bottom: 38px;
 }
 
 .section-title h2 {
+
     font-size: 34px;
+
     margin-top: 7px;
 }
 
@@ -206,6 +259,7 @@ section {
    ========================================= */
 
 .hero {
+
     padding: 80px 0;
 
     background: linear-gradient(
@@ -217,9 +271,11 @@ section {
 }
 
 .hero-grid {
+
     min-height: 600px;
 
     display: grid;
+
     grid-template-columns: 1fr 1fr;
 
     align-items: center;
@@ -233,10 +289,13 @@ section {
    ========================================= */
 
 .photo {
+
     width: 430px;
+
     height: 430px;
 
     margin: auto;
+
     padding: 8px;
 
     border-radius: 50%;
@@ -252,10 +311,13 @@ section {
 }
 
 .photo img {
+
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
+
     object-position: center top;
 
     border-radius: 50%;
@@ -270,15 +332,18 @@ section {
 
 .tag,
 .section-title > span {
+
     color: var(--primary);
 
     font-size: 12px;
+
     font-weight: bold;
 
     letter-spacing: 3px;
 }
 
 .hero h1 {
+
     font-size: clamp(40px, 5vw, 58px);
 
     line-height: 1.08;
@@ -288,10 +353,12 @@ section {
 
 .hero h1 strong,
 .section-title strong {
+
     color: var(--primary);
 }
 
 .hero-text p {
+
     max-width: 570px;
 
     color: var(--muted);
@@ -305,6 +372,7 @@ section {
    ========================================= */
 
 .social {
+
     display: flex;
 
     gap: 14px;
@@ -313,11 +381,15 @@ section {
 }
 
 .social a {
+
     width: 46px;
+
     height: 46px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     border: 1px solid var(--border);
@@ -341,6 +413,7 @@ section {
 }
 
 .social a:hover {
+
     transform: translateY(-5px);
 
     background: var(--primary);
@@ -360,6 +433,7 @@ section {
 
 .about,
 .contact-grid {
+
     display: grid;
 
     grid-template-columns: 1.2fr 0.8fr;
@@ -370,6 +444,7 @@ section {
 }
 
 .about p {
+
     color: var(--muted);
 
     font-size: 17px;
@@ -378,6 +453,7 @@ section {
 }
 
 .info {
+
     border-left: 2px solid var(--primary);
 
     padding-left: 30px;
@@ -388,10 +464,12 @@ section {
 }
 
 .info div {
+
     display: grid;
 }
 
 .info span {
+
     color: var(--muted);
 }
 
@@ -401,6 +479,7 @@ section {
    ========================================= */
 
 .cards {
+
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
@@ -410,6 +489,7 @@ section {
 
 .cards article,
 .projects article {
+
     background: var(--white);
 
     border: 1px solid var(--border);
@@ -427,24 +507,28 @@ section {
 
 .cards article:hover,
 .projects article:hover {
+
     transform: translateY(-4px);
 
     border-color: #9ccff0;
 }
 
 .cards article > div {
+
     font-size: 34px;
 
     margin-bottom: 12px;
 }
 
 .cards h3 {
+
     margin-bottom: 7px;
 }
 
 .cards p,
 .projects p,
 .contact p {
+
     color: var(--muted);
 
     font-size: 14px;
@@ -456,14 +540,37 @@ section {
    ========================================= */
 
 .projects {
+
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
     gap: 18px;
+
+    align-items: stretch;
 }
 
+
+/* =========================================
+   CARDS DOS PROJETOS
+   ========================================= */
+
+.projects article {
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;
+}
+
+
+/* =========================================
+   ÍCONE DO PROJETO
+   ========================================= */
+
 .project-icon {
+
     height: 115px;
 
     border-radius: 10px;
@@ -471,21 +578,47 @@ section {
     background: #edf7fd;
 
     display: grid;
+
     place-items: center;
 
     font-size: 42px;
 
     margin-bottom: 20px;
+
+    flex-shrink: 0;
 }
 
+
+/* =========================================
+   TÍTULO DO PROJETO
+   ========================================= */
+
 .projects h3 {
+
     margin-bottom: 8px;
 }
 
+
+/* =========================================
+   DESCRIÇÃO DO PROJETO
+   ========================================= */
+
+.projects p {
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   LINK VER DETALHES
+   FIXADO NA PARTE INFERIOR
+   ========================================= */
+
 .projects a {
+
     display: inline-block;
 
-    margin-top: 18px;
+    margin-top: auto;
 
     color: var(--primary);
 
@@ -495,6 +628,7 @@ section {
 }
 
 .projects a:hover {
+
     color: var(--primary-dark);
 }
 
@@ -504,16 +638,19 @@ section {
    ========================================= */
 
 .contact {
+
     background: var(--white);
 }
 
 .contact-info {
+
     border-left: 1px solid var(--border);
 
     padding-left: 35px;
 }
 
 .contact-info p {
+
     color: var(--text);
 
     margin-bottom: 15px;
@@ -526,12 +663,15 @@ section {
    ========================================= */
 
 footer {
+
     position: fixed;
 
     bottom: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 65px;
 
     padding: 15px 0;
@@ -544,6 +684,7 @@ footer {
 }
 
 .footer {
+
     height: 35px;
 
     display: flex;
@@ -560,8 +701,11 @@ footer {
 }
 
 .footer img {
+
     width: 135px;
+
     height: auto;
+
     display: block;
 }
 
@@ -573,41 +717,51 @@ footer {
 @media (max-width: 900px) {
 
     nav {
+
         display: none;
     }
 
     .hero-grid,
     .about,
     .contact-grid {
+
         grid-template-columns: 1fr;
     }
 
     .hero {
+
         padding: 55px 0;
     }
 
     .hero-text {
+
         text-align: center;
     }
 
     .hero-text p {
+
         margin: auto;
     }
 
     .social {
+
         justify-content: center;
     }
 
     .photo {
+
         width: 330px;
+
         height: 330px;
     }
 
     .cards {
+
         grid-template-columns: repeat(2, 1fr);
     }
 
     .projects {
+
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -622,18 +776,22 @@ footer {
     /* HEADER */
 
     header {
+
         height: 65px;
     }
 
     .nav {
+
         height: 65px;
     }
 
     .logo img {
+
         width: 135px;
     }
 
     .nav .btn {
+
         display: none;
     }
 
@@ -641,7 +799,9 @@ footer {
     /* MAIN */
 
     main {
+
         padding-top: 65px;
+
         padding-bottom: 80px;
     }
 
@@ -649,6 +809,7 @@ footer {
     /* SEÇÕES */
 
     section {
+
         scroll-margin-top: 65px;
     }
 
@@ -656,7 +817,9 @@ footer {
     /* FOTO */
 
     .photo {
+
         width: 270px;
+
         height: 270px;
     }
 
@@ -664,10 +827,12 @@ footer {
     /* TÍTULO */
 
     .hero h1 {
+
         font-size: 38px;
     }
 
     .section-title h2 {
+
         font-size: 29px;
     }
 
@@ -676,6 +841,7 @@ footer {
 
     .cards,
     .projects {
+
         grid-template-columns: 1fr;
     }
 
@@ -684,6 +850,7 @@ footer {
 
     .info,
     .contact-info {
+
         border-left: 0;
 
         border-top: 2px solid var(--primary);
@@ -695,12 +862,14 @@ footer {
     /* RODAPÉ */
 
     footer {
+
         height: 75px;
 
         padding: 10px 0;
     }
 
     .footer {
+
         height: 55px;
 
         flex-direction: column;
@@ -716,7 +885,9 @@ footer {
     /* ÍCONES */
 
     .social a {
+
         width: 44px;
+
         height: 44px;
 
         font-size: 18px;
