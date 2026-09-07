@@ -8,6 +8,52 @@
     <title>Monitoramento com Zabbix | Cezar Silva</title>
 
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- ==============================
+         AJUSTE DAS IMAGENS DO PROJETO
+    =============================== -->
+
+    <style>
+
+        .project-image {
+            width: 100%;
+            max-width: 100%;
+            margin: 30px 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        /* Garante que a imagem não ultrapasse
+           o conteúdo em telas menores */
+
+        @media (max-width: 768px) {
+
+            .project-image {
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            .project-image img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -38,13 +84,676 @@
 
 
     <!-- ==============================
-         CONTEÚDO DA PÁGINA
+         CONTEÚDO DO PROJETO
     =============================== -->
 
     <main>
 
-        <!-- Aqui entra SOMENTE o conteúdo
-             específico deste projeto -->
+        <!-- ==============================
+             INTRODUÇÃO
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h1>Projeto Zabbix + Docker Compose</h1>
+
+                <p>
+                    Ambiente completo de monitoramento de infraestrutura
+                    desenvolvido com <strong>Zabbix</strong>,
+                    <strong>Docker Compose</strong> e
+                    <strong>MySQL</strong>.
+                </p>
+
+                <p>
+                    O projeto foi desenvolvido para demonstrar a criação
+                    de uma plataforma de monitoramento capaz de acompanhar
+                    diferentes hosts e serviços através de uma infraestrutura
+                    baseada em containers.
+                </p>
+
+                <!-- IMAGEM 1 -->
+
+                <div class="project-image">
+
+                    <img
+                        src="imagens/zabbix-dashboard.png"
+                        alt="Dashboard do Zabbix"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             TECNOLOGIAS
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Tecnologias Utilizadas</h2>
+
+                <div class="skills">
+
+                    <span>Zabbix</span>
+                    <span>Docker</span>
+                    <span>Docker Compose</span>
+                    <span>MySQL</span>
+                    <span>Linux</span>
+                    <span>Monitoramento</span>
+                    <span>Redes</span>
+                    <span>Infraestrutura de TI</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             SOBRE O PROJETO
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Sobre o Projeto</h2>
+
+                <p>
+                    Este projeto cria um ambiente completo de monitoramento
+                    utilizando o Zabbix executado em containers Docker.
+                </p>
+
+                <p>
+                    A solução integra servidor Zabbix, banco de dados MySQL,
+                    interface web e agentes responsáveis pela coleta de
+                    métricas dos hosts monitorados.
+                </p>
+
+                <p>
+                    O ambiente utiliza uma rede Docker personalizada,
+                    volumes persistentes e endereços IP definidos para
+                    facilitar a comunicação entre os serviços.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             ARQUITETURA
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Arquitetura do Ambiente</h2>
+
+                <p>
+                    A infraestrutura é composta por diferentes containers
+                    conectados através da rede Docker
+                    <strong>redecezar</strong>.
+                </p>
+
+                <!-- IMAGEM 2 -->
+
+                <div class="project-image">
+
+                    <img
+                        src="imagens/zabbix-arquitetura.png"
+                        alt="Arquitetura do ambiente Zabbix com Docker Compose"
+                    >
+
+                </div>
+
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <h3>🗄️ MySQL</h3>
+
+                        <p>
+                            Banco de dados responsável por armazenar
+                            informações do Zabbix, incluindo itens,
+                            triggers e históricos.
+                        </p>
+
+                        <p>
+                            <strong>Container:</strong>
+                            zabbix-mysql
+                        </p>
+
+                        <p>
+                            <strong>Volume:</strong>
+                            mysql_data
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>📊 Zabbix Server</h3>
+
+                        <p>
+                            Responsável por receber e processar as métricas
+                            coletadas pelos agentes, além de processar
+                            triggers e alertas.
+                        </p>
+
+                        <p>
+                            <strong>Container:</strong>
+                            zabbix-server
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>🌐 Zabbix Web</h3>
+
+                        <p>
+                            Interface gráfica utilizada para administração,
+                            configuração e visualização das métricas
+                            e alertas.
+                        </p>
+
+                        <p>
+                            <strong>HTTP:</strong> 8080
+                        </p>
+
+                        <p>
+                            <strong>HTTPS:</strong> 8443
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>🖥️ Zabbix Agents</h3>
+
+                        <p>
+                            Os agentes são responsáveis pela coleta de
+                            informações dos hosts monitorados.
+                        </p>
+
+                        <p>
+                            <strong>Hosts:</strong>
+                            Docker01, Docker02 e Zabbix Server.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             COMPONENTES
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Componentes do Projeto</h2>
+
+                <ul>
+
+                    <li>
+                        <strong>MySQL:</strong>
+                        armazenamento das informações do Zabbix.
+                    </li>
+
+                    <li>
+                        <strong>Zabbix Server:</strong>
+                        processamento das métricas, eventos e alertas.
+                    </li>
+
+                    <li>
+                        <strong>Zabbix Web Interface:</strong>
+                        gerenciamento e visualização do ambiente.
+                    </li>
+
+                    <li>
+                        <strong>zabbix-agent2:</strong>
+                        monitoramento do host Docker.
+                    </li>
+
+                    <li>
+                        <strong>Docker01:</strong>
+                        host simulado para monitoramento.
+                    </li>
+
+                    <li>
+                        <strong>Docker02:</strong>
+                        segundo host simulado.
+                    </li>
+
+                    <li>
+                        <strong>zabbix-server-agent:</strong>
+                        monitoramento do próprio servidor Zabbix.
+                    </li>
+
+                    <li>
+                        <strong>redecezar:</strong>
+                        rede personalizada para comunicação entre os
+                        containers.
+                    </li>
+
+                    <li>
+                        <strong>Volumes persistentes:</strong>
+                        preservação dos dados importantes do ambiente.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             EXECUÇÃO
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Como Executar o Projeto</h2>
+
+                <h3>1. Subir os containers</h3>
+
+                <pre><code>docker compose up -d</code></pre>
+
+
+                <h3>2. Verificar os containers</h3>
+
+                <pre><code>docker ps</code></pre>
+
+
+                <h3>3. Acessar o Zabbix</h3>
+
+                <p>
+                    Após iniciar os containers, acesse a interface web
+                    através de:
+                </p>
+
+                <pre><code>http://localhost:8080
+
+https://localhost:8443</code></pre>
+
+
+                <div class="info">
+
+                    <p>
+                        <strong>Usuário padrão:</strong> Admin
+                    </p>
+
+                    <p>
+                        <strong>Senha padrão:</strong> zabbix
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             REDE DOCKER
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Configuração da Rede Docker</h2>
+
+                <p>
+                    O projeto utiliza uma rede personalizada chamada
+                    <strong>redecezar</strong>.
+                </p>
+
+                <p>
+                    Essa rede permite a comunicação entre os containers
+                    através de endereços IP definidos.
+                </p>
+
+
+                <h3>Listar as redes Docker</h3>
+
+                <pre><code>docker network ls</code></pre>
+
+
+                <h3>Inspecionar a rede</h3>
+
+                <pre><code>docker network inspect redecezar</code></pre>
+
+
+                <p>
+                    O comando permite visualizar os containers conectados,
+                    endereços IP e informações da rede.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             ESTRUTURA DE IP
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Estrutura de IPs</h2>
+
+                <p>
+                    Os containers utilizam endereços IP dentro da rede
+                    <strong>172.28.0.0/24</strong>.
+                </p>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Container</th>
+                                <th>Endereço IP</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>MySQL Server</td>
+                                <td>172.28.0.2</td>
+                            </tr>
+
+                            <tr>
+                                <td>Zabbix Server</td>
+                                <td>172.28.0.3</td>
+                            </tr>
+
+                            <tr>
+                                <td>Zabbix Web Interface</td>
+                                <td>172.28.0.4</td>
+                            </tr>
+
+                            <tr>
+                                <td>Docker Host Agent</td>
+                                <td>172.28.0.5</td>
+                            </tr>
+
+                            <tr>
+                                <td>Docker01</td>
+                                <td>172.28.0.6</td>
+                            </tr>
+
+                            <tr>
+                                <td>Docker02</td>
+                                <td>172.28.0.7</td>
+                            </tr>
+
+                            <tr>
+                                <td>Zabbix Server Agent</td>
+                                <td>172.28.0.8</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             CONFIGURAÇÃO DOS HOSTS
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Configuração dos Hosts no Zabbix</h2>
+
+                <p>
+                    Para adicionar um novo host ao monitoramento,
+                    acesse:
+                </p>
+
+                <pre><code>Configuration → Hosts → Create Host</code></pre>
+
+
+                <h3>Exemplo: Docker01</h3>
+
+                <ul>
+
+                    <li>
+                        <strong>Host name:</strong>
+                        Docker01
+                    </li>
+
+                    <li>
+                        <strong>Grupo:</strong>
+                        Linux servers
+                    </li>
+
+                    <li>
+                        <strong>Interface:</strong>
+                        Zabbix Agent
+                    </li>
+
+                    <li>
+                        <strong>IP:</strong>
+                        Docker01 ou 172.28.0.6
+                    </li>
+
+                    <li>
+                        <strong>Porta:</strong>
+                        10050
+                    </li>
+
+                </ul>
+
+
+                <!-- IMAGEM 3 -->
+
+                <div class="project-image">
+
+                    <img
+                        src="imagens/zabbix-host.png"
+                        alt="Configuração de host Docker01 no Zabbix"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             TEMPLATES
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Templates de Monitoramento</h2>
+
+                <p>
+                    Após criar o host, é possível vincular templates para
+                    coletar automaticamente métricas do sistema.
+                </p>
+
+
+                <div class="cards">
+
+                    <div class="card">
+
+                        <h3>🐧 Template OS Linux</h3>
+
+                        <p>
+                            Permite acompanhar diversos indicadores do
+                            sistema operacional.
+                        </p>
+
+                        <ul>
+                            <li>CPU</li>
+                            <li>Memória</li>
+                            <li>Disco</li>
+                            <li>Rede</li>
+                            <li>Disponibilidade</li>
+                        </ul>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>🐳 Monitoramento Docker</h3>
+
+                        <p>
+                            Pode ser utilizado para acompanhar informações
+                            relacionadas aos containers e ao ambiente
+                            Docker, quando configurado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    O mesmo procedimento pode ser repetido para
+                    <strong>Docker02</strong> e os demais hosts que serão
+                    monitorados.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             GERENCIAMENTO
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Gerenciamento do Ambiente</h2>
+
+
+                <h3>Parar o projeto</h3>
+
+                <pre><code>docker compose down</code></pre>
+
+
+                <h3>Reiniciar o projeto</h3>
+
+                <pre><code>docker compose up -d</code></pre>
+
+
+                <p>
+                    Os volumes persistentes permitem manter os dados
+                    importantes mesmo após a parada ou reinicialização
+                    dos containers.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             RESULTADO
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <h2>Resultado do Projeto</h2>
+
+                <p>
+                    O projeto demonstra a implementação de uma solução
+                    de monitoramento utilizando Zabbix e Docker Compose,
+                    permitindo acompanhar diferentes hosts através de
+                    uma única plataforma.
+                </p>
+
+                <p>
+                    A infraestrutura criada permite aplicar na prática
+                    conhecimentos relacionados a
+                    <strong>monitoramento, redes, containers, Linux,
+                    banco de dados e administração de infraestrutura de TI</strong>.
+                </p>
+
+
+                <!-- IMAGEM 4 -->
+
+                <div class="project-image">
+
+                    <img
+                        src="imagens/zabbix-monitoramento.png"
+                        alt="Monitoramento de infraestrutura com Zabbix"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             BOTÃO VOLTAR
+        =============================== -->
+
+        <section>
+
+            <div class="container">
+
+                <a href="../index.html#projetos" class="btn">
+                    ← Voltar para Projetos
+                </a>
+
+            </div>
+
+        </section>
 
     </main>
 
