@@ -33,8 +33,11 @@
 
     --radius: 14px;
 
-    /* Altura do rodapé */
-    --footer-height: 100px;
+    /* Altura reduzida do rodapé */
+    --footer-height: 65px;
+
+    /* Altura do cabeçalho */
+    --header-height: 58px;
 }
 
 
@@ -51,12 +54,8 @@
 html {
     scroll-behavior: smooth;
 
-    scroll-padding-top: 90px;
+    scroll-padding-top: var(--header-height);
 
-    /*
-       Espaço para que o conteúdo não fique
-       escondido atrás do rodapé fixo
-    */
     padding-bottom: var(--footer-height);
 }
 
@@ -77,9 +76,6 @@ body {
 
     min-height: 100vh;
 
-    /*
-       Espaço inferior reservado para o rodapé
-    */
     padding-bottom: var(--footer-height);
 }
 
@@ -128,7 +124,7 @@ header {
 }
 
 .nav {
-    min-height: 78px;
+    min-height: var(--header-height);
 
     display: flex;
 
@@ -136,7 +132,7 @@ header {
 
     justify-content: space-between;
 
-    gap: 30px;
+    gap: 25px;
 }
 
 
@@ -153,9 +149,9 @@ header {
 }
 
 .logo img {
-    width: 150px;
+    width: 135px;
 
-    max-height: 55px;
+    max-height: 42px;
 
     object-fit: contain;
 }
@@ -170,7 +166,7 @@ nav {
 
     align-items: center;
 
-    gap: 30px;
+    gap: 25px;
 }
 
 nav a {
@@ -178,7 +174,7 @@ nav a {
 
     color: #cbd5e1;
 
-    font-size: 15px;
+    font-size: 14px;
 
     font-weight: 600;
 }
@@ -190,7 +186,7 @@ nav a::after {
 
     left: 0;
 
-    bottom: -8px;
+    bottom: -6px;
 
     width: 0;
 
@@ -219,17 +215,17 @@ nav a:hover::after {
 
     justify-content: center;
 
-    gap: 8px;
+    gap: 7px;
 
-    padding: 12px 20px;
+    padding: 8px 16px;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
     background: var(--primary);
 
     color: #ffffff;
 
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: 700;
 
@@ -252,9 +248,9 @@ nav a:hover::after {
    ========================================================= */
 
 .icon {
-    width: 20px;
+    width: 19px;
 
-    height: 20px;
+    height: 19px;
 
     display: block;
 
@@ -764,9 +760,6 @@ section {
 .contact {
     position: relative;
 
-    /*
-       Fundo bem claro para a seção CONTATO
-    */
     background:
         linear-gradient(
             135deg,
@@ -898,19 +891,19 @@ footer {
 
     justify-content: space-between;
 
-    gap: 25px;
+    gap: 20px;
 }
 
 .footer img {
-    width: 125px;
+    width: 110px;
 
-    max-height: 45px;
+    max-height: 35px;
 
     object-fit: contain;
 }
 
 .footer span {
-    font-size: 13px;
+    font-size: 12px;
 }
 
 
@@ -950,7 +943,7 @@ footer {
     .nav {
         flex-wrap: wrap;
 
-        padding: 15px 0;
+        padding: 8px 0;
     }
 
     nav {
@@ -960,9 +953,9 @@ footer {
 
         justify-content: center;
 
-        padding-top: 5px;
+        padding-top: 3px;
 
-        gap: 22px;
+        gap: 18px;
     }
 
     .hero {
@@ -1012,7 +1005,9 @@ footer {
 @media (max-width: 600px) {
 
     :root {
-        --footer-height: 125px;
+        --footer-height: 80px;
+
+        --header-height: 52px;
     }
 
     .container {
@@ -1033,9 +1028,9 @@ footer {
     .nav {
         justify-content: center;
 
-        min-height: auto;
+        min-height: var(--header-height);
 
-        padding: 18px 0;
+        padding: 6px 0;
     }
 
     .logo {
@@ -1045,7 +1040,9 @@ footer {
     }
 
     .logo img {
-        width: 135px;
+        width: 120px;
+
+        max-height: 38px;
     }
 
 
@@ -1054,13 +1051,13 @@ footer {
        ===================================================== */
 
     nav {
-        gap: 12px;
+        gap: 10px;
 
         flex-wrap: wrap;
     }
 
     nav a {
-        font-size: 13px;
+        font-size: 12px;
     }
 
 
@@ -1071,7 +1068,9 @@ footer {
     .btn {
         width: 100%;
 
-        margin-top: 3px;
+        margin-top: 2px;
+
+        padding: 7px 15px;
     }
 
 
@@ -1176,7 +1175,7 @@ footer {
     .footer {
         min-height: var(--footer-height);
 
-        padding: 18px 0;
+        padding: 8px 0;
 
         flex-direction: column;
 
@@ -1184,15 +1183,17 @@ footer {
 
         text-align: center;
 
-        gap: 10px;
+        gap: 4px;
     }
 
     .footer img {
-        width: 120px;
+        width: 100px;
+
+        max-height: 30px;
     }
 
     .footer span {
-        font-size: 12px;
+        font-size: 11px;
     }
 }
 
@@ -1204,7 +1205,9 @@ footer {
 @media (max-width: 400px) {
 
     :root {
-        --footer-height: 135px;
+        --footer-height: 85px;
+
+        --header-height: 50px;
     }
 
     .hero h1 {
@@ -1218,19 +1221,19 @@ footer {
     }
 
     nav {
-        gap: 9px;
+        gap: 8px;
     }
 
     nav a {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .footer {
-        padding: 15px 0;
+        padding: 6px 0;
     }
 
     .footer span {
-        font-size: 11px;
+        font-size: 10px;
     }
 }
 
